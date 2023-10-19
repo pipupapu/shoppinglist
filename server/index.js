@@ -16,7 +16,7 @@ app.get("/", async function(req,res) {
         const [result,] = await connection.execute('select * from item')
 
         if (!result) result=[]
-        res.status(200).json
+        res.status(200).send(result)
     }   catch(err) {
         res.status(500).json({error: err.message})
     }
